@@ -1,0 +1,10 @@
+/* PRODUCTS GRID SHORTCODE */
+.tbe_products_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 4fr);
+  grid-column-gap: 1rem;
+}
+
+.tbe_product {
+  margin-bottom: 60px;
+}
