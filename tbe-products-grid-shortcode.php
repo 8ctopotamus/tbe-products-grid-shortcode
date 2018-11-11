@@ -98,13 +98,13 @@ function tbe_products_grid_function($args) {
         ),
       )
     );
-    $loop = new WP_Query( $args );
     $html = '<div class="tbe_products_grid">';
+    $loop = new WP_Query( $args );
     while ( $loop->have_posts() ) : $loop->the_post();
     global $product;
       $html .= '<div class="tbe_product">';
-      $html .= '<a href="'.get_the_permalink().'">';
-      $html .= '<img class="tbe_product_image" src="'. get_the_post_thumbnail_url($product->id, 'medium') .'" alt="'. $product->name .'" />';
+      $html .= '<a href="' . get_the_permalink() . '">';
+      $html .= '<div class="tbe_product_image" style="background-image: url(' . get_the_post_thumbnail_url($product->id, 'medium') . ');"></div>';
       $html .= apply_filters( 'the_content', get_the_content() );
       $html .= '</a>';
       $html .= '</div>';
