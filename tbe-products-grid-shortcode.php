@@ -96,6 +96,12 @@ function tbe_products_grid_function($args) {
             'terms' => $cat,
             'operator' => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
         ),
+      ),
+			'meta_query' => array(
+        array(
+          'key' => '_stock_status',
+          'value' => 'instock'
+        )
       )
     );
     $html = '<div class="tbe_products_grid">';
